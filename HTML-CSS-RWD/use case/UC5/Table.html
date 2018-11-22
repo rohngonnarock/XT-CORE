@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+        main {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        table {
+            border: 5px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr.caption {
+            background-color: chocolate;
+            text-align: center;
+        }
+
+        thead tr,
+        tbody tr td.header {
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        tbody tr td.header {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        thead tr td {
+            border: 1px solid black;
+        }
+
+        tbody tr td.temperature p:nth-of-type(1) {
+            color: red;
+            font-weight: bold;
+        }
+        tbody tr td.temperature p:nth-of-type(2) {
+            color: black;
+            font-weight: bold;
+        }
+        tbody tr td.temperature p:nth-last-of-type(1) {
+            color: gray;
+            font-weight:lighter;
+        }
+
+        tbody tr td:nth-last-of-type(1) {
+            text-align: left;
+            color: gray;
+            font-weight: lighter;
+            min-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <table border="1">
+
+            <thead>
+                <tr class="caption">
+                    <th colspan="9">
+                        <h1>2012 Temperature Highlights</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        Annual Average Temperature
+                        <p>(Normal)</p>
+                    </th>
+                    <th>
+                        Days 100F or
+                        <p>(Normal)</p>
+                    </th>
+                    <th>
+                        Days 90F or Above
+                        <p>(Normal)</p>
+                    </th>
+                    <th>
+                        Days 32F or Below
+                        <p>(Normal)</p>
+                    </th>
+                    <th>
+                        Mornings 10F or Below
+                        <p>(Normal)</p>
+                    </th>
+                    <th>Warmest Day</th>
+                    <th>Coldest Morning</th>
+                    <th>Other Highlights</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="header">Wichita</td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="header">Wichita</td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="header">Wichita</td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td class="temperature">
+                        <p>61.5</p>
+                        <p>1st Warmest</p>
+                        <p>(57.0)</p>
+                    </td>
+                    <td>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                        <p>*5th Warmest Winter</p>
+                        <p>*1st Warmest Winter</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Layout Flex</title>
+    <style>
+      header {
+        text-align: right;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      section div.small {
+        height: 50px;
+        background-color: lightgray;
+        border: 1px solid gray;
+        flex: 200px;
+      }
+      section div.box {
+        height: 50px;
+        background-color: white;
+        border: 1px solid gray;
+        flex: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>0</h1></header>
+    <section>
+      <div class="small"></div>
+      <div class="small"></div>
+      <div class="small"></div>
+      <div class="small"></div>
+      <div class="small"></div>
+      <div class="small"></div>
+    </section>
+    <section>
+      <div class="box">%</div>
+      <div class="box">$</div>
+      <div class="box">x2</div>
+      <div class="box">x</div>
+      <div class="box">CE</div>
+      <div class="box">C</div>
+      <div class="box">x</div>
+      <div class="box">/</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">X</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">-</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">+</div>
+      <div class="box">+-</div>
+      <div class="box">0</div>
+      <div class="box">.</div>
+      <div class="box">=</div>
+    </section>
+  </body>
+</html>

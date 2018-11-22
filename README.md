@@ -1,3 +1,5 @@
-# XT-CORE
+# XT-Core
 
-# Rahul Prajapati
+## Rahul Prajapati
+
+Repo for XT Core assignments

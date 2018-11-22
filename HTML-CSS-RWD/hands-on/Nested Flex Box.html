@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      main {
+        display: flex;
+        border: 2px solid black;
+        margin: 10px;
+        justify-content: space-between;
+      }
+
+      article {
+        display: flex;
+        border: 2px solid red;
+        margin: 10px;
+        flex: 400px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      article div {
+        border: 2px solid green;
+        margin: 10px;
+        height: 100px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <main>
+      <article>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+      </article>
+      <article>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+      </article>
+      <article>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+      </article>
+    </main>
+    <footer>Footer</footer>
+  </body>
+</html>
