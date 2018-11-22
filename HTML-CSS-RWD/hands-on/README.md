@@ -19,3 +19,7 @@ The folder contains the following hands on excercise week-wise.
 ### 7 -> Position Excercise
 
 ### 8 -> Position Relative
+
+### 9 -> Fluid Layout
+
+### 10- -> Rem Em Use Case
