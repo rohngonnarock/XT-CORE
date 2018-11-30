@@ -1,0 +1,16 @@
+{
+  "posts": [],
+  "comments": [],
+  "profile": [
+    {
+      "id": 1,
+      "name": "save",
+      "city": "delhi"
+    },
+    {
+      "id": 2,
+      "name": "fdsdfd",
+      "city": "sdfdsfs"
+    }
+  ]
+}
