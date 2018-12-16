@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping Cart</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2 class="page-header">YOUR SHOPPING BAG</h2>
+        <div class="content-header">
+          <div class="noOfItem">3 Items</div>
+          <div class="size">SIZE</div>
+          <div class="qty">QTY</div>
+          <div class="price">PRICE</div>
+        </div>
+      </header>
+      <main>
+        <div class="content">
+          <section class="item-list"></section>
+          <section class="billing">
+            <aside>
+              <div class="info">
+                <p><strong>Need help or have questions?</strong></p>
+                <p>Call Customer Service at 1-800-555-5555</p>
+                <p><a href="#">Chat with one of our stylists</a></p>
+                <p><a href="#">See return and exchange policy</a></p>
+              </div>
+            </aside>
+            <article>
+              <div class="promo">
+                <div class="promoLabel">
+                  <label for="promoCode">
+                    ENTER PROMOTION CODE OR GIFT CARD
+                  </label>
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-field input"
+                    type="text"
+                    name="promoCode"
+                    id="promoCode"
+                  />
+                  <button class="form-field button" type="button">APPLY</button>
+                </div>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p><strong>SUBTOTAL</strong></p>
+                    </td>
+                    <td>
+                      <p><strong class="estPrice">$37.00</strong></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <strong>ESTIMATED SHIPPING <sup>*</sup></strong> <br />
+                        <span class="freeDelivery">
+                          You spent $50, so you qualify for free shipping
+                          <sup>*</sup>
+                        </span>
+                      </p>
+                    </td>
+                    <td>
+                      <p><strong>FREE</strong></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>PROMOTION CODE <strong>JF10</strong> APPLIED</p>
+                    </td>
+                    <td>
+                      <p><strong>-$7.00</strong></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <strong>ESTIMATED TOTAL</strong> <br />
+                        Tax will be applied during checkout
+                      </p>
+                    </td>
+                    <td>
+                      <p><strong class="totalPrice">-$7.00</strong></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout">
+                <div class="checkoutButton">
+                  <button class="button primary">CHECKOUT</button>
+                </div>
+                <div class="link"><a href="#">CONTINUE SHOPPING</a></div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+      <div id="overlay">
+        <div class="overlayContainer">
+          <input type="hidden" class="hiddenAttr" value="" />
+          <div class="closeButton"><a href="#" class="close">X</a></div>
+          <div class="overlayContent">
+            <div class="left">
+              <div class="editDesc">RED T-SHIRT</div>
+              <div class="editPrice">$ <span class="amount">21.00</span></div>
+              <div class="editcolour">RED</div>
+              <div class="edit">
+                <select class="sizeList">
+                  <option value="0">SIZE</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="qtyList">
+                  <option value="0">QTY</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div class="editButton">
+                <button type="button" class="button primary" id="editButton">
+                  EDIT
+                </button>
+              </div>
+              <div class="editOtherLinks">
+                <a href="#">See Product Details</a>
+              </div>
+            </div>
+            <div class="right">
+              <img
+                class="editImage"
+                src="images/shirt-3.jpg"
+                height="300"
+                width="80%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
