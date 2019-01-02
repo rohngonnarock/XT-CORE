@@ -71,10 +71,14 @@ class Products extends Component {
           {filteredProducts && filteredProducts.length > 0
             ? filteredProducts.map(product => {
                 return (
-                  <div key={product.id}>
-                    <h3>{product.name}</h3>
-                    <img src={product.imageURL} />
-                    <p>{product.description}</p>
+                  <div className="product" key={product.id}>
+                    <div className="title">
+                      <h3>{product.name}</h3>
+                    </div>
+                    <div className="image">
+                      <img src={product.imageURL} />
+                    </div>
+                    <div className="description"> {product.description}</div>
                     {`MRP Rs. ${product.price}`}
                     <button
                       onClick={() => {
@@ -88,18 +92,24 @@ class Products extends Component {
               })
             : products.map(product => {
                 return (
-                  <div key={product.id}>
-                    <h3>{product.name}</h3>
-                    <img src={product.imageURL} />
-                    <p>{product.description}</p>
-                    {`MRP Rs. ${product.price}`}
-                    <button
-                      onClick={() => {
-                        this.addToCart(product);
-                      }}
-                    >
-                      Buy Now
-                    </button>
+                  <div className="product" key={product.id}>
+                    <div className="title">
+                      <h3>{product.name}</h3>
+                    </div>
+                    <div className="image">
+                      <img src={product.imageURL} />
+                    </div>
+                    <div className="description"> {product.description}</div>
+                    <div className="input-group">
+                      {`MRP Rs. ${product.price}`}
+                      <button
+                        onClick={() => {
+                          this.addToCart(product);
+                        }}
+                      >
+                        Buy Now
+                      </button>
+                    </div>
                   </div>
                 );
               })}

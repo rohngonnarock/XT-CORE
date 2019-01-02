@@ -12,8 +12,6 @@
 }
 
 .wrapper {
-  width: 100%;
-  max-width: 960px;
   margin: 0 auto;
 }
 footer {
@@ -25,6 +23,22 @@ footer {
   padding: 10px;
   color: black;
   text-align: center;
+}
+
+@media (min-width: 568px) {
+  .wrapper {
+    width: 550px;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 1170px;
+  }
 }
 .Login {
   @include form();
