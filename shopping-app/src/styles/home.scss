@@ -1,0 +1,41 @@
+.main {
+  .content {
+    &:nth-of-type(2n + 2) {
+      .image {
+        order: 1;
+      }
+    }
+    display: flex;
+    justify-content: center;
+
+    .image {
+      padding: 20px;
+      flex-grow: 1;
+      align-self: center;
+      img {
+        width: 200px;
+      }
+    }
+
+    .image-detail {
+      text-align: center;
+      flex-grow: 4;
+      padding: 30px;
+      .heading {
+        font-size: 30px;
+        padding: 10px;
+      }
+      p {
+        padding: 10px;
+      }
+
+      button {
+        color: white;
+        background-color: $btn-color;
+        padding: 10px;
+        border: none;
+        margin: 10px;
+      }
+    }
+  }
+}

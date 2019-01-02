@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, withRouter, Link } from "react-router-dom";
 
 const Navbar = props => {
+  console.log(props);
   return (
     <nav>
       <Link className="brand-logo" to="/">
@@ -33,10 +34,10 @@ const Navbar = props => {
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/register" className="cart">
+            <a href="/" onClick={props.toggleHandler} className="cart">
               <img src="images/cart.svg" alt="cart" />
               <div>0 items</div>
-            </NavLink>
+            </a>
           </li>
         </ul>
       </div>

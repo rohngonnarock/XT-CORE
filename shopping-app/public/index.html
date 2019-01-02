@@ -8,10 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dosis:400,600,700"
-      rel="stylesheet"
-    />
+
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -27,9 +24,15 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:400,600,700"
+      rel="stylesheet"
+    />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   </head>
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -41,5 +44,29 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      $(document).ready(function() {
+        $.mobile.loading().hide();
+        function swipeleftHandler(event) {
+          console.log("swipeleftHandler");
+          document.querySelector("a.prev").click();
+        }
+        function swiperightHandler(event) {
+          console.log("swiperightHandler");
+          document.querySelector("a.next").click();
+        }
+
+        $("div#root").delegate(
+          "div.slideshow-container",
+          "swipeleft",
+          swiperightHandler
+        );
+        $("div#root").delegate(
+          "div.slideshow-container",
+          "swiperight",
+          swipeleftHandler
+        );
+      });
+    </script>
   </body>
 </html>

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getProducts, getCategories } from "../store/actions/actions";
+import {
+  getProducts,
+  getCategories,
+  addToCart,
+  showCart
+} from "../store/actions/actions";
 
 class Products extends Component {
   constructor(props) {
@@ -24,6 +29,11 @@ class Products extends Component {
       categoryId,
       filteredProducts
     });
+  }
+
+  addToCart(product) {
+    this.props.addToCart(product);
+    this.props.showCart();
   }
   render() {
     const { categories, products } = this.props;
@@ -66,6 +76,13 @@ class Products extends Component {
                     <img src={product.imageURL} />
                     <p>{product.description}</p>
                     {`MRP Rs. ${product.price}`}
+                    <button
+                      onClick={() => {
+                        this.addToCart(product);
+                      }}
+                    >
+                      Buy Now
+                    </button>
                   </div>
                 );
               })
@@ -76,6 +93,13 @@ class Products extends Component {
                     <img src={product.imageURL} />
                     <p>{product.description}</p>
                     {`MRP Rs. ${product.price}`}
+                    <button
+                      onClick={() => {
+                        this.addToCart(product);
+                      }}
+                    >
+                      Buy Now
+                    </button>
                   </div>
                 );
               })}
@@ -95,7 +119,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getProducts: () => dispatch(getProducts()),
-    getCategories: () => dispatch(getCategories())
+    getCategories: () => dispatch(getCategories()),
+    addToCart: product => dispatch(addToCart(product)),
+    showCart: () => dispatch(showCart())
   };
 };
 
