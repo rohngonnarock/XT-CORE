@@ -16,7 +16,7 @@
   "scripts": {
     "api": "canned -p 5000 ./server",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -43,16 +43,20 @@ const Banner = ({ banners }) => {
           })}
 
         <a
+          href="/"
           className="prev"
-          onClick={() => {
+          onClick={e => {
+            e.preventDefault();
             plusSlides(-1);
           }}
         >
           &#10094;
         </a>
         <a
+          href="/"
           className="next"
-          onClick={() => {
+          onClick={e => {
+            e.preventDefault();
             plusSlides(1);
           }}
         >

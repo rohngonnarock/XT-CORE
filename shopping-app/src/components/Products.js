@@ -47,7 +47,9 @@ class Products extends Component {
                 return category.enabled ? (
                   <li key={category.id}>
                     <a
-                      onClick={() => {
+                      href="/"
+                      onClick={e => {
+                        e.preventDefault();
                         this.selectCategory(category.id);
                       }}
                     >
@@ -58,7 +60,9 @@ class Products extends Component {
               })}
             <li>
               <a
-                onClick={() => {
+                href="/"
+                onClick={e => {
+                  e.preventDefault();
                   this.selectCategory(null);
                 }}
               >
@@ -76,7 +80,7 @@ class Products extends Component {
                       <h3>{product.name}</h3>
                     </div>
                     <div className="image">
-                      <img src={product.imageURL} />
+                      <img src={product.imageURL} alt={product.description} />
                     </div>
                     <div className="description"> {product.description}</div>
                     {`MRP Rs. ${product.price}`}
@@ -97,7 +101,7 @@ class Products extends Component {
                       <h3>{product.name}</h3>
                     </div>
                     <div className="image">
-                      <img src={product.imageURL} />
+                      <img src={product.imageURL} alt={product.description} />
                     </div>
                     <div className="description"> {product.description}</div>
                     <div className="input-group">

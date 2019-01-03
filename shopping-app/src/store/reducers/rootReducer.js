@@ -1,5 +1,3 @@
-import cart from "../../components/cart";
-
 const initState = {
   products: [],
   banner: [],
