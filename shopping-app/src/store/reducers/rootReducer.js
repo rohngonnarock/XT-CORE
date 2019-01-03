@@ -40,7 +40,7 @@ const rootReducer = (state = initState, action) => {
       console.log("signup error");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "GET_BANNERS_SUCCESS":
@@ -53,7 +53,7 @@ const rootReducer = (state = initState, action) => {
       console.log("GET_BANNERS_ERROR");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "GET_CATEGORIES_SUCCESS":
@@ -66,7 +66,7 @@ const rootReducer = (state = initState, action) => {
       console.log("GET_CATEGORIES_ERROR");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "GET_PRODUCTS_SUCCESS":
@@ -79,7 +79,7 @@ const rootReducer = (state = initState, action) => {
       console.log("GET_PRODUCTS_ERROR");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "ADD_TO_CART_SUCCESS":
@@ -116,7 +116,7 @@ const rootReducer = (state = initState, action) => {
       console.log("ADD_TO_CART_ERROR");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "REMOVE_FROM_CART_SUCCESS":
@@ -151,21 +151,20 @@ const rootReducer = (state = initState, action) => {
       console.log("REMOVE_FROM_CART_ERROR");
       return {
         ...state,
-        authError: action.err.message
+        authError: action.err
       };
 
     case "SHOW_CART_SUCCESS":
       console.log("SHOW_CART_SUCCESS");
       return {
         ...state,
-        authError: action.err.message
+        hideCart: false
       };
 
     case "SHOW_HIDE_CART_ERROR":
-      console.log("REMOVE_FROM_CART_ERROR");
+      console.log("SHOW_HIDE_CART_ERROR");
       return {
-        ...state,
-        hideCart: false
+        ...state
       };
 
     case "HIDE_CART_SUCCESS":

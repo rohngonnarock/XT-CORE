@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, withRouter, Link } from "react-router-dom";
 
 const Navbar = props => {
-  console.log(props);
   return (
     <nav>
       <Link className="brand-logo" to="/">
