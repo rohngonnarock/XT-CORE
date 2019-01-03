@@ -26,49 +26,101 @@ class Cart extends Component {
         <div className="chat-popup" hidden={showForm}>
           <div className="form-container">
             <div className="cart-header">
-              <h1>My Cart</h1>
+              <div>
+                <h4>My Cart </h4>
+                {totalItems > 0 ? (
+                  <span>
+                    ({totalItems} {totalItems > 1 ? "items" : "item"})
+                  </span>
+                ) : null}
+              </div>
+
               <button
+                className="btn btn-cancel"
                 onClick={() => {
                   this.toggleForm();
                 }}
               >
-                X
+                <i className="fas fa-times" />
               </button>
             </div>
-            <div className="cart-item">cart items -- {totalItems}</div>
-            {cartItems &&
-              cartItems.map(itm => {
-                return itm.qty > 0 ? (
-                  <div key={itm.product.id}>
-                    {itm.product.name}
-                    <button
-                      onClick={() => {
-                        this.addToCart(itm.product);
-                      }}
-                    >
-                      +
-                    </button>
-                    {itm.qty}
-                    <button
-                      onClick={() => {
-                        this.removeFromCart(itm.product);
-                      }}
-                    >
-                      -
-                    </button>
+            <div className="content">
+              {cartItems && cartItems.length > 0 ? (
+                []
+                  .concat(cartItems)
+                  .sort((a, b) => {
+                    var nameA = a.product.id.toUpperCase();
+                    var nameB = b.product.id.toUpperCase();
+                    if (nameA < nameB) {
+                      return -1;
+                    }
+                    if (nameA > nameB) {
+                      return 1;
+                    }
+                    return 0;
+                  })
+                  .map(itm => {
+                    return itm.qty > 0 ? (
+                      <div key={itm.product.id} className="content-item">
+                        <div className="item-box">
+                          <div className="image-box">
+                            <img
+                              src={itm.product.imageURL}
+                              alt={itm.product.description}
+                            />
+                          </div>
+                          <div className="price-box">
+                            <div> {itm.product.name} </div>
+                            <div>
+                              <button
+                                onClick={() => {
+                                  this.addToCart(itm.product);
+                                }}
+                              >
+                                <i className="fas fa-plus" />
+                              </button>
+                              {itm.qty}
+                              <button
+                                onClick={() => {
+                                  this.removeFromCart(itm.product);
+                                }}
+                              >
+                                <i className="fas fa-minus" />
+                              </button>
+                              <i className="fas fa-times" />
+                              {`Rs.${itm.product.price}`}
+                            </div>
+                          </div>
+                        </div>
 
-                    {`Total Price is : ${itm.qty * itm.product.price}`}
-                  </div>
-                ) : null;
-              })}
-            Promo code can be applied on payment page.
-            <button
-              type="button"
-              className="btn cancel"
-              onClick={this.toggleForm}
-            >
-              {`Proceed to Checkout : ${cartTotal} `}
-            </button>
+                        <div>{`Rs.${itm.qty * itm.product.price}`}</div>
+                      </div>
+                    ) : null;
+                  })
+              ) : (
+                <div className="empty-cart">
+                  <div> No items in your cart </div>
+                  <p>Your favourite items are just a click away</p>
+                </div>
+              )}
+            </div>
+            {cartItems && cartItems.length > 0 ? (
+              <div className="proceed">
+                <p>Promo code can be applied on payment page.</p>
+                <button type="button" className="btn cancel">
+                  <span> Proceed to Checkout</span>
+                  <span>
+                    Rs.{cartTotal} <i className="fas fa-angle-right" />
+                  </span>
+                </button>
+              </div>
+            ) : (
+              <div>
+                <button type="button" className="btn start">
+                  <span> Start Shopping</span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

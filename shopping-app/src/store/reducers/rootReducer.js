@@ -4,7 +4,7 @@ const initState = {
   categories: [],
   cartItems: [],
   cartTotal: 0,
-  hideCart: true
+  hideCart: false
 };
 
 const rootReducer = (state = initState, action) => {
