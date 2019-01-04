@@ -2,7 +2,7 @@
   .flex {
     display: flex;
     & > div {
-      padding: 75px 40px;
+      padding: 75px 40px 75px 130px;
     }
 
     & > form {
@@ -14,7 +14,7 @@
     position: relative;
     margin-bottom: 25px;
   }
-  input[type="button"] {
+  input[type="submit"] {
     background-color: $btn-color;
     color: #fff;
   }

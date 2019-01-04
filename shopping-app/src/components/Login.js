@@ -7,22 +7,22 @@ const Login = () => {
           <h1>Login</h1>
           <p>Get access to yours Orders, Wishlist and Recommendations</p>
         </div>
-        <form>
+        <form name="loginForm" action="/" target="_self">
           <div className="group">
-            <input type="text" required />
+            <input type="text" required name="name" id="name" />
             <span className="highlight" />
             <span className="bar" />
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
           </div>
 
           <div className="group">
-            <input type="text" required />
+            <input type="email" required name="email" id="email" />
             <span className="highlight" />
             <span className="bar" />
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <div className="group">
-            <input type="button" value="Login" />
+            <input type="submit" value="Login" name="submit" />
           </div>
         </form>
       </div>

@@ -35,7 +35,6 @@ class Home extends Component {
         <Banner banners={banners} />
         {categories &&
           categories.map(post => {
-            console.log(post);
             return post.enabled ? (
               <div className="content" key={post.id}>
                 <div className="image">
