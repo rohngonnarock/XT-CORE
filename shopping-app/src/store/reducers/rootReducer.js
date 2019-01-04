@@ -4,7 +4,8 @@ const initState = {
   categories: [],
   cartItems: [],
   cartTotal: 0,
-  hideCart: false
+  cartTotolItems: 0,
+  hideCart: true
 };
 
 const rootReducer = (state = initState, action) => {
@@ -107,7 +108,8 @@ const rootReducer = (state = initState, action) => {
 
       return {
         ...state,
-        cartItems: [...prevArr, empObj]
+        cartItems: [...prevArr, empObj],
+        cartTotolItems: (state.cartTotolItems += 1)
       };
 
     case "ADD_TO_CART_ERROR":
@@ -142,7 +144,8 @@ const rootReducer = (state = initState, action) => {
 
       return {
         ...state,
-        cartItems: [...cartItems]
+        cartItems: [...cartItems],
+        cartTotolItems: (state.cartTotolItems -= 1)
       };
 
     case "REMOVE_FROM_CART_ERROR":

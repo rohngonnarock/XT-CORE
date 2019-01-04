@@ -19,7 +19,7 @@
     color: #fff;
   }
   input {
-    font-size: $font-size;
+    font-size: $font-size-default;
     padding: 10px 0px;
     display: block;
     width: 100%;
@@ -33,7 +33,7 @@
   /* LABEL ======================================= */
   label {
     color: #999;
-    font-size: $font-size;
+    font-size: $font-size-default;
     font-weight: normal;
     position: absolute;
     pointer-events: none;

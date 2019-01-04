@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Banner from "./Banner";
 import { getBanners, getCategories } from "../store/actions/actions";
+import { Route } from "react-router-dom";
 
 class Home extends Component {
   constructor(props) {
@@ -15,12 +16,26 @@ class Home extends Component {
 
   render() {
     const { categories, banners } = this.props;
-
+    const CustomButton = text => (
+      <Route
+        render={({ history }) => (
+          <button
+            type="button"
+            onClick={() => {
+              history.push("/products");
+            }}
+          >
+            {"Explore " + text.value}
+          </button>
+        )}
+      />
+    );
     return (
       <div className="main">
         <Banner banners={banners} />
         {categories &&
           categories.map(post => {
+            console.log(post);
             return post.enabled ? (
               <div className="content" key={post.id}>
                 <div className="image">
@@ -29,7 +44,7 @@ class Home extends Component {
                 <div className="image-detail">
                   <div className="heading">{post.name}</div>
                   <p>{post.description}</p>
-                  <button>Explore fruit-and-veg</button>
+                  <CustomButton value={post.key} />
                 </div>
               </div>
             ) : null;

@@ -16,11 +16,8 @@ class Cart extends Component {
     this.props.removeFromCart(product);
   }
 
-  toggleForm() {
-    this.props.hideCart();
-  }
   render() {
-    let { cartItems, cartTotal, totalItems, showForm } = this.props;
+    let { cartItems, cartTotal, totalItems, showForm, hideCart } = this.props;
     return (
       <div className="cart">
         <div className="chat-popup" hidden={showForm}>
@@ -35,12 +32,7 @@ class Cart extends Component {
                 ) : null}
               </div>
 
-              <button
-                className="btn btn-cancel"
-                onClick={() => {
-                  this.toggleForm();
-                }}
-              >
+              <button className="btn btn-cancel" onClick={hideCart}>
                 <i className="fas fa-times" />
               </button>
             </div>
@@ -107,7 +99,7 @@ class Cart extends Component {
             {cartItems && cartItems.length > 0 ? (
               <div className="proceed">
                 <p>Promo code can be applied on payment page.</p>
-                <button type="button" className="btn cancel">
+                <button type="button" className="btn cancel" onClick={hideCart}>
                   <span> Proceed to Checkout</span>
                   <span>
                     Rs.{cartTotal} <i className="fas fa-angle-right" />
@@ -116,7 +108,7 @@ class Cart extends Component {
               </div>
             ) : (
               <div>
-                <button type="button" className="btn start">
+                <button type="button" className="btn start" onClick={hideCart}>
                   <span> Start Shopping</span>
                 </button>
               </div>
@@ -138,7 +130,7 @@ const mapStateToProps = state => {
   return {
     cartItems: state.cartItems,
     cartTotal: total,
-    totalItems: state.cartItems.length,
+    totalItems: state.cartTotolItems,
     showForm: state.hideCart
   };
 };

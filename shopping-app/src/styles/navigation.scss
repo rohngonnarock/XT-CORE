@@ -17,6 +17,15 @@ nav {
     }
   }
 
+  @media (max-width: 767.98px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .hide-mobile {
+      display: none;
+    }
+  }
+
   .social {
     max-width: 150px;
     margin: 0 auto;
@@ -26,7 +35,6 @@ nav {
       align-items: center;
       img {
         width: 40px;
-        filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
       }
     }
   }

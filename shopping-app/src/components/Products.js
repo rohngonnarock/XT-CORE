@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import {
   getProducts,
   getCategories,
-  addToCart,
-  showCart
+  addToCart
 } from "../store/actions/actions";
 
 class Products extends Component {
@@ -22,6 +21,9 @@ class Products extends Component {
   }
 
   selectCategory(categoryId) {
+    if (this.state.categoryId === categoryId) {
+      categoryId = null;
+    }
     let filteredProducts = this.props.products.filter(
       itm => itm.category === categoryId
     );
@@ -33,7 +35,6 @@ class Products extends Component {
 
   addToCart(product) {
     this.props.addToCart(product);
-    this.props.showCart();
   }
   render() {
     const { categories, products } = this.props;
@@ -45,7 +46,12 @@ class Products extends Component {
             {categories &&
               categories.map(category => {
                 return category.enabled ? (
-                  <li key={category.id}>
+                  <li
+                    key={category.id}
+                    className={
+                      category.id === this.state.categoryId ? "active" : null
+                    }
+                  >
                     <a
                       href="/"
                       onClick={e => {
@@ -58,18 +64,29 @@ class Products extends Component {
                   </li>
                 ) : null;
               })}
-            <li>
-              <a
-                href="/"
-                onClick={e => {
-                  e.preventDefault();
-                  this.selectCategory(null);
-                }}
-              >
-                Remove Category
-              </a>
-            </li>
           </ul>
+          <select
+            name="dropdown"
+            onChange={e => {
+              this.selectCategory(e.target.value);
+            }}
+          >
+            <option value="null">Select category</option>
+            {categories &&
+              categories.map(category => {
+                return category.enabled ? (
+                  <option
+                    key={category.id}
+                    className={
+                      category.id === this.state.categoryId ? "active" : null
+                    }
+                    value={category.id}
+                  >
+                    {category.name}
+                  </option>
+                ) : null;
+              })}
+          </select>
         </aside>
         <div className="main">
           {filteredProducts && filteredProducts.length > 0
@@ -134,8 +151,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getProducts: () => dispatch(getProducts()),
     getCategories: () => dispatch(getCategories()),
-    addToCart: product => dispatch(addToCart(product)),
-    showCart: () => dispatch(showCart())
+    addToCart: product => dispatch(addToCart(product))
   };
 };
 

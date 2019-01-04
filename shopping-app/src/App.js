@@ -26,6 +26,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App wrapper">
           <Navbar
+            totalItems={this.props.totalItems}
             toggleHandler={() => {
               this.cartToggleHandler();
             }}
@@ -46,7 +47,8 @@ class App extends Component {
 }
 const mapStateToProps = state => {
   return {
-    hideCart: state.hideCart
+    hideCart: state.hideCart,
+    totalItems: state.cartTotolItems
   };
 };
 

@@ -8,7 +8,7 @@ const Navbar = props => {
         <img src="images/logo.png" alt="" />
       </Link>
       <div className="nav-links">
-        <ul>
+        <ul className="hide-mobile">
           <li>
             <NavLink exact to="/">
               Home
@@ -22,20 +22,30 @@ const Navbar = props => {
           </li>
         </ul>
         <ul className="social">
-          <li>
+          <li className="hide-mobile">
             <NavLink exact to="/login">
               SignIn
             </NavLink>
           </li>
-          <li>
+          <li className="hide-mobile">
             <NavLink exact to="/register">
               Register
             </NavLink>
           </li>
           <li>
-            <a href="/" onClick={props.toggleHandler} className="cart">
+            <a
+              href="/"
+              role="button"
+              onClick={e => {
+                e.preventDefault();
+                props.toggleHandler();
+              }}
+              className="cart"
+            >
               <img src="images/cart.svg" alt="cart" />
-              <div>0 items</div>
+              <div>
+                {props.totalItems} {props.totalItems > 1 ? "items" : "item"}
+              </div>
             </a>
           </li>
         </ul>
